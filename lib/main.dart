@@ -1,3 +1,4 @@
+import 'package:abtkar_app/modules/details/cubit/download_image_cubit.dart';
 import 'package:abtkar_app/modules/popular_people/cubit/popular_cubit.dart';
 import 'package:abtkar_app/modules/popular_people/screen.dart';
 import 'package:abtkar_app/shared/observer.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
             return MultiBlocProvider(
               providers: [
                 BlocProvider(create: (context) => PopularCubit(),),
+                BlocProvider(create: (context) => DownloadImageCubit(),),
               ],
               child: MaterialApp(
                 useInheritedMediaQuery: true,

@@ -1,3 +1,4 @@
+import 'package:abtkar_app/services/dowload_image.dart';
 import 'package:abtkar_app/services/popular.dart';
 import 'package:flutter/material.dart';
 import 'package:queen/facade.dart';
@@ -18,5 +19,6 @@ Future<void> injectServices() async {
 
   /// inject services
   Locators.putLazy(() => PopularPeopleService());
+  Locators.putLazy(() => ImageServices());
 
 }

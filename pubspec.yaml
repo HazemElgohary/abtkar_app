@@ -41,6 +41,9 @@ dependencies:
   dio: ^4.0.6
   laravel_exception: ^0.0.4
   dark_light_button: ^0.0.2
+  image_gallery_saver: ^1.7.1
+  permission_handler: ^9.2.0
+  edge_alerts: ^0.0.1
   queen:
     git:
       url: https://github.com/maxzod/queen.git

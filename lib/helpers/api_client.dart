@@ -46,6 +46,7 @@ class ApiClient {
     Map<String, dynamic> headers = const {},
     Map<String, dynamic> query = const {},
     bool attachToken = true,
+        bool wantBytes = false,
   }) async {
     final res = await dio.get(
       url,
@@ -58,6 +59,7 @@ class ApiClient {
           'accept-lang': Lang.current.languageCode,
           ...headers,
         },
+          responseType: wantBytes? ResponseType.bytes:null,
       ),
     );
     return _validate(res);
