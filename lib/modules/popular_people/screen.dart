@@ -42,7 +42,8 @@ class PopularPeopleScreen extends StatelessWidget {
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(state.msg),
+                Center(child: Text(state.msg)),
+                SizedBox(height: context.height * .01,),
                 Container(
                   color: Colors.amber,
                   child: MaterialButton(
