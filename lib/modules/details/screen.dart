@@ -21,16 +21,18 @@ class DetailsScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8),
               mainAxisSpacing: 10,
               crossAxisSpacing: 5,
-              childAspectRatio: .8,
+              childAspectRatio: .5,
               children: model.knowFor
                   .map((e) => e.backdropImage.isNotEmpty
                       ? PopularImageItem(
                           image: e.getBackdropImage,
                           description: e.overview,
+                          name: e.title ?? e.originalName ?? '',
                         )
                       : PopularImageItem(
                           image: e.getPosterImage,
                           description: e.overview,
+                          name: e.title ?? e.originalName ?? '',
                         ))
                   .toList(),
             )

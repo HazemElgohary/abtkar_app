@@ -76,6 +76,19 @@ class Results extends Equatable {
     );
   }
 
+  Map<String,dynamic> toMap()=>{
+
+      "adult": adult,
+    "gender": gender,
+    "id": id,
+    "known_for": knowFor.map((v) => v.toMap()).toList(),
+    "known_for_department": department,
+    "name": name,
+    "popularity": popularity,
+    "profile_path": profileImage
+
+  };
+
   String get getProfileImage => EndPoints.imageUrl + profileImage;
 
   @override
@@ -141,6 +154,20 @@ class KnowFor extends Equatable {
   String get getPosterImage => posterImage.isNotEmpty
       ? EndPoints.imageUrl + posterImage
       : Asset.images.image;
+
+  Map<String,dynamic> toMap()=>{
+    "backdrop_path": backdropImage,
+    "id": id,
+    "media_type": mediaType,
+    "original_language": lang,
+    "overview": overview,
+    "poster_path": posterImage,
+    "release_date": releaseDate,
+    "title": title,
+    "vote_average": voteAverage,
+    "vote_count": voteCount,
+    "original_name": originalName
+  };
 
   @override
   List<Object?> get props => [

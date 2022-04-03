@@ -10,8 +10,9 @@ import '../../shared/components/alerts.dart';
 class ImageDownloadScreen extends StatelessWidget {
   final String image;
   final String desc;
+  final String name;
 
-  const ImageDownloadScreen({Key? key, required this.image, required this.desc})
+  const ImageDownloadScreen({Key? key, required this.image, required this.desc,required this.name})
       : super(key: key);
 
   @override
@@ -21,6 +22,19 @@ class ImageDownloadScreen extends StatelessWidget {
       body: Column(
         children: [
           Image.network(image),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              name,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: context.subtitle1!.copyWith(
+                color: Colors.amber,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+          ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
