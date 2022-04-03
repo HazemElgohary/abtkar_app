@@ -1,6 +1,7 @@
 import 'package:abtkar_app/generated/tr.dart';
 import 'package:abtkar_app/modules/popular_people/cubit/popular_cubit.dart';
 import 'package:abtkar_app/shared/components/custom_app_bar.dart';
+import 'package:abtkar_app/shared/components/localization_button.dart';
 import 'package:abtkar_app/shared/components/paginated_item_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,7 +14,7 @@ class PopularPeopleScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: Tr.popularPeople.tr),
+      appBar: CustomAppBar(title: Tr.popularPeople.tr,leading: const LocalizationButton(),),
       body: BlocConsumer<PopularCubit, PopularState>(
         listener: (context, state) {},
         builder: (context, state) {

@@ -7,6 +7,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool centerTitle = true;
   final bool enableLeading;
   final List<Widget>? actions;
+  final Widget? leading;
   final void Function()? leadingOnTap;
   final VoidCallback? onTapBack;
   final PreferredSizeWidget? bottom;
@@ -24,6 +25,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.leadingIconColor,
     this.titleColor,
     this.onTapBack,
+    this.leading,
     this.enableLeading = true,
   }) : super(key: key);
 
@@ -34,20 +36,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ? context.theme.backgroundColor
           : backgroundColor,
       centerTitle: centerTitle,
-      leading: enableLeading
-          ? () {
-        if (context.canPop) {
-          return IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: onTapBack ??
-                ((leadingOnTap == null)
-                    ? () => Navigator.pop(context)
-                    : leadingOnTap),
-            color: leadingIconColor ?? context.theme.primaryColor,
-          );
-        }
-      }()
-          : null,
+      // leading: enableLeading
+      //     ? () {
+      //   if (context.canPop) {
+      //     return IconButton(
+      //       icon: const Icon(Icons.arrow_back),
+      //       onPressed: onTapBack ??
+      //           ((leadingOnTap == null)
+      //               ? () => Navigator.pop(context)
+      //               : leadingOnTap),
+      //       color: leadingIconColor ?? context.theme.primaryColor,
+      //     );
+      //   }
+      // }()
+      //     : null,
+      leading: leading,
       title: Text(
         title ?? '',
         style: context.subtitle1?.copyWith(
