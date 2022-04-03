@@ -1,4 +1,7 @@
+import 'package:abtkar_app/generated/assets.dart';
 import 'package:equatable/equatable.dart';
+
+import '../helpers/end_points.dart';
 
 class PopularPeopleModel extends Equatable {
   final int page;
@@ -16,7 +19,11 @@ class PopularPeopleModel extends Equatable {
   factory PopularPeopleModel.fromJson(Map<String, dynamic> json) {
     return PopularPeopleModel(
       page: json['page'],
-      results: (json['results'] as List).map((e) => Results.fromJson(e),).toList(),
+      results: (json['results'] as List)
+          .map(
+            (e) => Results.fromJson(e),
+          )
+          .toList(),
       totalPages: json['total_pages'],
       totalResults: json['total_results'],
     );
@@ -24,11 +31,11 @@ class PopularPeopleModel extends Equatable {
 
   @override
   List<Object?> get props => [
-    page,
-    results,
-    totalPages,
-    totalResults,
-  ];
+        page,
+        results,
+        totalPages,
+        totalResults,
+      ];
 }
 
 class Results extends Equatable {
@@ -61,9 +68,15 @@ class Results extends Equatable {
       name: json['name'],
       popularity: json['popularity'],
       profileImage: json['profile_path'],
-      knowFor: (json['known_for'] as List).map((e) => KnowFor.formJson(e),).toList(),
+      knowFor: (json['known_for'] as List)
+          .map(
+            (e) => KnowFor.formJson(e),
+          )
+          .toList(),
     );
   }
+
+  String get getProfileImage => EndPoints.imageUrl + profileImage;
 
   @override
   List<Object?> get props => [
@@ -79,8 +92,7 @@ class Results extends Equatable {
 }
 
 class KnowFor extends Equatable {
-
-  final String? backdropImage;
+  final String backdropImage;
   final int id;
   final String mediaType;
   final String lang;
@@ -92,8 +104,7 @@ class KnowFor extends Equatable {
   final num voteAverage;
   final num voteCount;
 
-
-const KnowFor({
+  const KnowFor({
     required this.originalName,
     required this.backdropImage,
     required this.id,
@@ -122,6 +133,14 @@ const KnowFor({
       voteCount: json['vote_count'],
     );
   }
+
+  String get getBackdropImage => backdropImage.isNotEmpty
+      ? EndPoints.imageUrl + backdropImage
+      : Asset.images.image;
+
+  String get getPosterImage => posterImage.isNotEmpty
+      ? EndPoints.imageUrl + posterImage
+      : Asset.images.image;
 
   @override
   List<Object?> get props => [

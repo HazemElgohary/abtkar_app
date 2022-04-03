@@ -6,10 +6,10 @@ import 'package:queen/queen.dart';
 class AppLangConfig extends NationsConfig {
   @override
   List<Locale> get supportedLocales => const [
-    // arabic
-    Locale('ar'),
     // english
     Locale('en'),
+    // arabic
+    Locale('ar'),
   ];
 
   @override

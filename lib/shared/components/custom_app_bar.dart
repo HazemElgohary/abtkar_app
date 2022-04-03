@@ -1,5 +1,7 @@
+import 'package:dark_light_button/dark_light_button.dart';
 import 'package:flutter/material.dart';
 import 'package:queen/queen.dart';
+import 'package:queen/themes.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
@@ -49,11 +51,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           : null,
       title: Text(
         title ?? '',
-        style: context.headline3?.copyWith(
+        style: context.subtitle1?.copyWith(
           color: titleColor,
         ),
       ),
-      actions: actions,
+      actions:  [Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: DarlightButton(
+          onChange: (ThemeMode theme) {
+            AppTheme.next();
+          },
+        ),
+      )],
       bottom: bottom,
     );
   }

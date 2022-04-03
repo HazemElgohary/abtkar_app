@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:queen/queen.dart';
 
-import '../../shared/components/popular_item.dart';
 
 class PopularPeopleScreen extends StatelessWidget {
   const PopularPeopleScreen({Key? key}) : super(key: key);

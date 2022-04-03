@@ -40,6 +40,7 @@ dependencies:
   device_preview: ^1.0.0
   dio: ^4.0.6
   laravel_exception: ^0.0.4
+  dark_light_button: ^0.0.2
   queen:
     git:
       url: https://github.com/maxzod/queen.git
@@ -68,6 +69,7 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   assets: 
+    - assets/images/image.png
     - assets/lang/ar.json
     - assets/lang/en.json
   uses-material-design: true

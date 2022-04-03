@@ -57,6 +57,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  dark_light_button:
+    dependency: "direct main"
+    description:
+      name: dark_light_button
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.2"
   device_frame:
     dependency: transitive
     description:
@@ -401,6 +408,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.1"
+  sprung:
+    dependency: transitive
+    description:
+      name: sprung
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.0"
   stack_trace:
     dependency: transitive
     description:
